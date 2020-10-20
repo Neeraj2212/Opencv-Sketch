@@ -10,7 +10,7 @@ class Sketch:
         image  = cv2.imread(self.imgpath)
         image_gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
         image_gray_neg = 255-image_gray
-        image_blur = cv2.GaussianBlur(image_gray_neg,(21,21),sigmaX=0,sigmaY=0)
+        image_blur = cv2.GaussianBlur(image_gray_neg,(25,25),sigmaX=0,sigmaY=0)
         final_sketch = self.dodge(image_gray,image_blur)
         cv2.imwrite(self.savepath +"/"+ self.savename,final_sketch)
 
